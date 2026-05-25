@@ -21,9 +21,9 @@ js/
 Readme.txt          This file
 
 GITHUB && MERCURY
-Link to Github Repostiity 
+Link to Github Repostiity: https://github.com/TechICO-i/wd_assign2
 
-Link to Mercury
+Link to Mercury: 
 
 
 JAVASCRIPT VALIDATION LOGIC
@@ -81,4 +81,5 @@ REFERENCES
 - Restaurant descriptions are original.
 - No external JavaScript libraries were used.
 - CSS and JS written from scratch based on COS10005 lecture material.
+
 
