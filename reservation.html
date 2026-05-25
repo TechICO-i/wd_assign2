@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserve a table at your favourite restaurant on TableGlimpse.">
+  <title>Reservations | TableGlimpse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <h1>TableGlimpse</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="recommend.html">Recommendations</a>
+        <a href="reservation.html" class="active">Reservations</a>
+        <a href="register.html">Register</a>
+        <a href="bill.html">Bill Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="reservation">
+      <div class="section-head">
+        <h2>Reserve a Table</h2>
+        <p>Fill in your details to secure your booking. A deposit may be required.</p>
+      </div>
+
+      <div class="form-card" style="max-width:700px;">
+        <form id="reservationForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+
+          <div class="form-grid">
+
+            <!-- Full Name -->
+            <div>
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith">
+              <p class="error-msg" id="fullNameError">Full name is required.</p>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="resEmail">Email Address</label>
+              <input type="email" id="resEmail" name="email" placeholder="e.g. jane@email.com">
+              <p class="error-msg" id="resEmailError">Please enter a valid email address.</p>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="resPhone">Phone Number</label>
+              <input type="tel" id="resPhone" name="phone" placeholder="e.g. 0412345678">
+              <p class="error-msg" id="resPhoneError">Phone number must contain at least 10 digits.</p>
+            </div>
+
+            <!-- Restaurant selection -->
+            <div>
+              <label for="restaurantChoice">Restaurant</label>
+              <select id="restaurantChoice" name="restaurantChoice">
+                <option value="">-- Select a Restaurant --</option>
+                <option value="La Trattoria">La Trattoria (Italian — $$)</option>
+                <option value="Sakura Lounge">Sakura Lounge (Japanese — $$$)</option>
+                <option value="Urban Harvest">Urban Harvest (Modern Australian — $$)</option>
+                <option value="Casa Caliente">Casa Caliente (Mexican — $)</option>
+                <option value="Spice Garden">Spice Garden (Indian — $$)</option>
+                <option value="Golden Dragon">Golden Dragon (Chinese — $)</option>
+              </select>
+              <p class="error-msg" id="restaurantError">Please select a restaurant.</p>
+            </div>
+
+            <!-- Deposit display (dynamically updated) -->
+            <div>
+              <label>Deposit Amount</label>
+              <p id="depositDisplay" style="padding:0.65rem 0.9rem; background:#edf2f4; border-radius:8px; font-weight:600;">
+                Select a restaurant to see deposit amount.
+              </p>
+            </div>
+
+            <!-- Reservation Date -->
+            <div>
+              <label for="reservationDate">Reservation Date</label>
+              <input type="date" id="reservationDate" name="reservationDate">
+              <p class="error-msg" id="dateError">Please select a future date for your reservation.</p>
+            </div>
+
+            <!-- Reservation Time -->
+            <div>
+              <label for="reservationTime">Reservation Time</label>
+              <input type="time" id="reservationTime" name="reservationTime">
+              <p class="error-msg" id="timeError">Please select a time for your reservation.</p>
+            </div>
+
+            <!-- Number of Guests -->
+            <div>
+              <label for="guests">Number of Guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="20" value="2">
+              <p class="error-msg" id="guestsError">Number of guests must be greater than 0.</p>
+            </div>
+
+            <!-- Special Requests -->
+            <div>
+              <label for="specialRequests">Special Requests (Optional)</label>
+              <textarea id="specialRequests" name="specialRequests" placeholder="e.g. Allergies, high chair needed, window seat..."></textarea>
+            </div>
+
+            <!-- Deposit Method -->
+            <div>
+              <label>Deposit Payment Method</label>
+              <div class="radio-group">
+                <label><input type="radio" name="paymentMethod" value="voucher" id="payVoucher"> Voucher</label>
+                <label><input type="radio" name="paymentMethod" value="online" id="payOnline"> Online Payment</label>
+              </div>
+              <p class="error-msg" id="paymentError">Please select a payment method.</p>
+            </div>
+
+            <!-- Voucher Code (shown only when Voucher is selected) -->
+            <div id="voucherSection" class="hidden">
+              <label for="voucherCode">Voucher Code (12 digits)</label>
+              <input type="text" id="voucherCode" name="voucherCode" placeholder="e.g. 123456789012" maxlength="12">
+            </div>
+
+            <!-- Credit Card (shown only when Online Payment is selected) -->
+            <div id="cardSection" class="hidden">
+              <label for="cardType">Card Type</label>
+              <select id="cardType" name="cardType">
+                <option value="visa">Visa (16 digits)</option>
+                <option value="mastercard">Mastercard (16 digits)</option>
+                <option value="amex">American Express (15 digits)</option>
+              </select>
+            </div>
+            <div id="cardNumberSection" class="hidden">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="Digits only — use fake card for testing">
+              <p class="error-msg" id="cardError">Invalid card number. Visa/MC: 16 digits, Amex: 15 digits.</p>
+            </div>
+
+          </div><!-- end form-grid -->
+
+          <!-- Reservation success message -->
+          <div class="reservation-output" id="reservationOutput"></div>
+
+          <button type="submit" class="button mt-1">Confirm Reservation</button>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer>
+    <p>TableGlimpse &copy; 2026. Discover and reserve restaurants in a few clicks. 
+      <br>NOTE: All restaurants featured are not real.All images were found on Google Images</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="recommend.html">Recommendations</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="register.html">Register</a>
+      <a href="bill.html">Bill Calculator</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate your restaurant bill before you go with the TableGlimpse Bill Calculator.">
+  <title>Bill Calculator | TableGlimpse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <h1>TableGlimpse</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="recommend.html">Recommendations</a>
+        <a href="reservation.html">Reservations</a>
+        <a href="register.html">Register</a>
+        <a href="bill.html" class="active">Bill Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="bill">
+      <div class="section-head">
+        <h2>Estimated Bill Calculator</h2>
+        <p>Before you go out, figure out how much it will cost overall. This is a terrific way to budget for group dinners.</p>
+      </div>
+
+      <div class="bill-box">
+
+        <!-- Restaurant selection -->
+        <div style="margin-bottom:1rem;">
+          <label for="billRestaurant">Select Restaurant</label>
+          <select id="billRestaurant">
+            <option value="">-- Choose a restaurant --</option>
+            <option value="La Trattoria" data-base="32">La Trattoria (avg $32/person)</option>
+            <option value="Sakura Lounge" data-base="75">Sakura Lounge (avg $75/person)</option>
+            <option value="Urban Harvest" data-base="45">Urban Harvest (avg $45/person)</option>
+            <option value="Casa Caliente" data-base="20">Casa Caliente (avg $20/person)</option>
+            <option value="Spice Garden" data-base="28">Spice Garden (avg $28/person)</option>
+            <option value="Golden Dragon" data-base="24">Golden Dragon (avg $24/person)</option>
+          </select>
+        </div>
+
+        <!-- Group size -->
+        <div style="margin-bottom:1rem;">
+          <label for="groupSize">Number of People</label>
+          <input type="number" id="groupSize" min="1" max="30" value="2">
+        </div>
+
+        <!-- Optional dishes -->
+        <div style="margin-bottom:1rem;">
+          <label>Add Optional Extras</label>
+          <div class="dish-option">
+            <label for="dish1">Drinks Package (+$15/person)</label>
+            <input type="checkbox" id="dish1" value="15">
+          </div>
+          <div class="dish-option">
+            <label for="dish2">Dessert Platter (+$12)</label>
+            <input type="checkbox" id="dish2" value="12">
+          </div>
+          <div class="dish-option">
+            <label for="dish3">Floral Centrepiece (+$25)</label>
+            <input type="checkbox" id="dish3" value="25">
+          </div>
+          <div class="dish-option">
+            <label for="dish4">Champagne Toast (+$10/person)</label>
+            <input type="checkbox" id="dish4" value="10">
+          </div>
+        </div>
+
+        <!-- Service charge option -->
+        <div style="margin-bottom:1.2rem;">
+          <div class="inline-check">
+            <input type="checkbox" id="includeService" checked>
+            <label for="includeService">Include 10% service charge</label>
+          </div>
+        </div>
+
+        <button class="button" id="calcBillBtn" style="width:100%;">Calculate Total</button>
+
+        <!-- Bill breakdown output -->
+        <div id="billBreakdown" class="hidden" style="margin-top:1.2rem; background:#f8f5f1; border-radius:10px; padding:1rem; font-size:0.95rem;">
+          <h3 style="margin-bottom:0.7rem; color:#2b2d42;">Bill Breakdown</h3>
+          <div id="breakdownDetails"></div>
+          <hr style="margin:0.8rem 0; border:none; border-top:1px solid #ddd;">
+          <div class="bill-total" id="billTotal">Total: $0.00</div>
+          <p style="text-align:center; font-size:0.8rem; color:#888; margin-top:0.5rem;">This is an estimate only. Final bill may vary.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer>
+    <p>TableGlimpse &copy; 2026. Discover and reserve restaurants in a few clicks. 
+      <br>NOTE: All restaurants featured are not real.All images were found on Google Images</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="recommend.html">Recommendations</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="register.html">Register</a>
+      <a href="bill.html">Bill Calculator</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

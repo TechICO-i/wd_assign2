@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse available restaurants on TableGlimpse - filter by cuisine and price.">
+  <title>Restaurants | TableGlimpse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <h1>TableGlimpse</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html" class="active">Restaurants</a>
+        <a href="recommend.html">Recommendations</a>
+        <a href="reservation.html">Reservations</a>
+        <a href="register.html">Register</a>
+        <a href="bill.html">Bill Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="restaurants">
+      <div class="section-head">
+        <h2>Browse Available Restaurants</h2>
+        <p>Filter by cuisine type and price range to find the perfect spot.</p>
+      </div>
+
+      <!-- Filter controls -->
+      <div class="filters">
+        <div>
+          <label for="cuisineFilter">Cuisine</label>
+          <select id="cuisineFilter">
+            <option value="all">All Cuisines</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Modern Australian">Modern Australian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Indian">Indian</option>
+            <option value="Chinese">Chinese</option>
+          </select>
+        </div>
+        <div>
+          <label for="priceFilter">Price Range</label>
+          <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="$">$ (Budget)</option>
+            <option value="$$">$$ (Moderate)</option>
+            <option value="$$$">$$$ (Fine Dining)</option>
+          </select>
+        </div>
+        <div>
+          <button class="button" id="resetFilters" style="margin-top:1.4rem;">Reset</button>
+        </div>
+      </div>
+
+      <!-- No results message (hidden by default) -->
+      <p id="noResults" class="hidden" style="text-align:center; color:#555; padding:2rem;">
+        No restaurants match your filters. Try a different combination.
+      </p>
+
+      <!-- Restaurant Cards -->
+      <div class="cards-grid" id="restaurantCards">
+
+        <!-- Restaurant 1 -->
+        <article class="card" data-cuisine="Italian" data-price="$$">
+          <img src="images/iltaly.jpg" alt="Exterior of La Trattoria Italian restaurant with warm lighting and rustic decor">
+          <div class="card-body">
+            <h3>La Trattoria</h3>
+            <div class="card-tags">
+              <span class="tag">Italian</span>
+              <span class="tag tag-price">$$</span>
+            </div>
+            <p>
+              La Trattoria, a quaint Italian trattoria in the center of Melbourne, 
+              delivers real delicacies from Naples and Rome right to your table. 
+              The restaurant, which has been family-run since 2005, is renowned for its wood-fired pizzas,
+               slow-cooked sauces, and friendly service.
+
+              Ideal for casual date nights or family dinners.
+            </p>
+            <p><strong>Average price:</strong> $25–$40 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$20</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Spaghetti Carbonara</span><span>$22</span></li>
+              <li><span>Margherita Pizza</span><span>$18</span></li>
+              <li><span>Tiramisu</span><span>$12</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=La+Trattoria" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- Restaurant 2 -->
+        <article class="card" data-cuisine="Japanese" data-price="$$$">
+          <img src="images/japan.jpg" alt="Exterior of Sakura Lounge Japanese restaurant">
+          <div class="card-body">
+            <h3>Sakura Lounge</h3>
+            <div class="card-tags">
+              <span class="tag">Japanese</span>
+              <span class="tag tag-price">$$$</span>
+            </div>
+            <p>
+              Sakura Lounge offers an elevated Japanese dining experience with a focus on freshness
+              and presentation. From delicate sashimi platters to steaming bowls of ramen, every
+              dish is crafted with seasonal ingredients sourced daily. Ideal for business dinners
+              or special celebrations. The sake menu is outstanding.
+            </p>
+            <p><strong>Average price:</strong> $60–$90 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$50</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Sashimi Platter (12pc)</span><span>$48</span></li>
+              <li><span>Wagyu Beef Ramen</span><span>$35</span></li>
+              <li><span>Matcha Cheesecake</span><span>$16</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=Sakura+Lounge" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- Restaurant 3 -->
+        <article class="card" data-cuisine="Modern Australian" data-price="$$">
+          <img src="images/australia.jpg" alt="Urban Harvest restaurant">
+          <div class="card-body">
+            <h3>Urban Harvest</h3>
+            <div class="card-tags">
+              <span class="tag">Australian</span>
+              <span class="tag tag-price">$$</span>
+            </div>
+            <p>
+              Urban Harvest celebrates the best of Australian produce with a creative modern twist.
+              The seasonal menu changes regularly to reflect what's fresh from local farms and
+              suppliers. With a relaxed, industrial-chic setting and an impressive natural wine
+              list, it's a favourite for both locals and visitors exploring Melbourne's food scene.
+            </p>
+            <p><strong>Average price:</strong> $35–$55 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$25</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Grilled Barramundi</span><span>$34</span></li>
+              <li><span>Kangaroo Loin with Wattleseed</span><span>$38</span></li>
+              <li><span>Pavlova with Seasonal Berries</span><span>$14</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=Urban+Harvest" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- Restaurant 4 -->
+        <article class="card" data-cuisine="Mexican" data-price="$">
+          <img src="images/mexican.jpg" alt="Vibrant Casa Caliente Mexican restaurant">
+          <div class="card-body">
+            <h3>Casa Caliente</h3>
+            <div class="card-tags">
+              <span class="tag">Mexican</span>
+              <span class="tag tag-price">$</span>
+            </div>
+            <p>
+              Casa Caliente is Melbourne's favourite casual Mexican spot. Expect bold flavours,
+              generous portions, and a lively atmosphere. The kitchen makes everything fresh daily
+              — from hand-pressed tortillas to house-made salsa. Whether you are grabbing a quick
+              lunch or a fun group dinner, Casa Caliente delivers authentic Mexican street food at
+              unbeatable prices.
+            </p>
+            <p><strong>Average price:</strong> $15–$25 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$10</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Beef Tacos (3pc)</span><span>$16</span></li>
+              <li><span>Loaded Nachos</span><span>$14</span></li>
+              <li><span>Churros with Chocolate</span><span>$10</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=Casa+Caliente" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- Restaurant 5 -->
+        <article class="card" data-cuisine="Indian" data-price="$$">
+          <img src="images/indian.jpg" alt="Spice Garden Indian restaurant">
+          <div class="card-body">
+            <h3>Spice Garden</h3>
+            <div class="card-tags">
+              <span class="tag">Indian</span>
+              <span class="tag tag-price">$$</span>
+            </div>
+            <p>
+              Spice Garden takes you on a culinary journey through the diverse regions of India.
+              From the creamy curries of the north to the tangy seafood dishes of the south, the
+              menu caters to all spice tolerances and dietary needs — with an excellent range of
+              vegan and vegetarian options. The weekend buffet is legendary among regulars.
+            </p>
+            <p><strong>Average price:</strong> $20–$35 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$15</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Butter Chicken</span><span>$24</span></li>
+              <li><span>Paneer Tikka Masala (V)</span><span>$22</span></li>
+              <li><span>Gulab Jamun</span><span>$9</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=Spice+Garden" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+        <!-- Restaurant 6 -->
+        <article class="card" data-cuisine="Chinese" data-price="$">
+          <img src="images/chinese.jpg" alt="Golden Dragon Chinese restaurant">
+          <div class="card-body">
+            <h3>Golden Dragon</h3>
+            <div class="card-tags">
+              <span class="tag">Chinese</span>
+              <span class="tag tag-price">$</span>
+            </div>
+            <p>
+              Golden Dragon has been a Melbourne institution for over 20 years. Specialising in
+              Cantonese cuisine, the restaurant is famed for its weekend yum cha, Peking duck, and
+              handmade dumplings. The warm and welcoming atmosphere makes it perfect for large
+              family gatherings or a satisfying weeknight dinner. A great halal-friendly option
+              with many dishes suitable for different dietary needs.
+            </p>
+            <p><strong>Average price:</strong> $18–$30 per person</p>
+            <p class="deposit-badge">Reservation deposit: <strong>$10</strong></p>
+            <h4 style="margin-top:0.8rem; font-size:0.95rem;">Signature Dishes</h4>
+            <ul class="dishes-list">
+              <li><span>Peking Duck (Half)</span><span>$38</span></li>
+              <li><span>Steamed Har Gow (4pc)</span><span>$10</span></li>
+              <li><span>Egg Tarts (3pc)</span><span>$8</span></li>
+            </ul>
+            <a href="reservation.html?restaurant=Golden+Dragon" class="btn-reserve">Reserve a Table</a>
+          </div>
+        </article>
+
+      </div><!-- end #restaurantCards -->
+    </section>
+
+  </main>
+
+  
+  <!-- footer -->
+  <footer>
+    <p>TableGlimpse &copy; 2026. Discover and reserve restaurants in a few clicks. 
+      <br>NOTE: All restaurants featured are not real.All images were found on Google Images</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="recommend.html">Recommendations</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="register.html">Register</a>
+      <a href="bill.html">Bill Calculator</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

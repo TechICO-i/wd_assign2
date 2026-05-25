@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get personalised restaurant recommendations based on your dietary preferences, budget, and dining purpose.">
+  <title>Recommendations | TableGlimpse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <h1>TableGlimpse</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="recommend.html" class="active">Recommendations</a>
+        <a href="reservation.html">Reservations</a>
+        <a href="register.html">Register</a>
+        <a href="bill.html">Bill Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="recommendations">
+      <div class="section-head">
+        <h2>Personalised Recommendations</h2>
+        <p>Tell us your preferences and we will suggest the best restaurant for you.</p>
+      </div>
+
+      <!-- Preference form -->
+      <div class="form-card">
+        <div class="form-grid">
+
+          <div>
+            <label for="dietaryPref">Dietary Preference</label>
+            <select id="dietaryPref">
+              <option value="none">No Preference</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="halal">Halal</option>
+              <option value="glutenfree">Gluten-Free</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="budgetPref">Budget (per person)</label>
+            <select id="budgetPref">
+              <option value="low">Budget — Under $25</option>
+              <option value="mid">Moderate — $25–$55</option>
+              <option value="high">Fine Dining — $55+</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="purposePref">Dining Purpose</label>
+            <select id="purposePref">
+              <option value="family">Family Dinner</option>
+              <option value="date">Date Night</option>
+              <option value="business">Business Meal</option>
+              <option value="friends">Casual Outing with Friends</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button class="button mt-1" id="recommendBtn">Get Recommendation</button>
+
+        <!-- Recommendation output -->
+        <div class="recommendation-output" id="recommendationOutput">
+          Select your preferences above and click <strong>Get Recommendation</strong>.
+        </div>
+
+        <!-- button for reserving the recommended restaurant -->
+        <div id="reserveFromRecommend" class="hidden mt-1" style="text-align:center;">
+          <a href="#" id="reserveRecommendedBtn" class="button">Reserve This Restaurant</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer>
+    <p>TableGlimpse &copy; 2026. Discover and reserve restaurants in a few clicks. 
+      <br>NOTE: All restaurants featured are not real.All images were found on Google Images</p>
+  
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="recommend.html">Recommendations</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="register.html">Register</a>
+      <a href="bill.html">Bill Calculator</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

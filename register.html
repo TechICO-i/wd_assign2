@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for a TableGlimpse account to save favourites and manage reservations.">
+  <title>Register | TableGlimpse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1>TableGlimpse</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="recommend.html">Recommendations</a>
+        <a href="reservation.html">Reservations</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="bill.html">Bill Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="register">
+      <div class="section-head">
+        <h2>Register for an Account</h2>
+        <p>Sign up to save your favourite restaurants and manage reservations.</p>
+      </div>
+
+      <div class="form-card">
+        <form id="registerForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/surveytest.php" novalidate>
+
+          <div class="form-grid">
+
+            <!-- Username -->
+            <div>
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="e.g. john_doe123">
+              <p class="error-msg" id="usernameError">Username must be at least 5 characters and contain only letters, numbers, or underscores.</p>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="e.g. john@email.com">
+              <p class="error-msg" id="emailError">Please enter a valid email address.</p>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 0412345678">
+              <p class="error-msg" id="phoneError">Phone number must contain 8–15 digits only.</p>
+            </div>
+
+            <!-- Password -->
+            <div>
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="At least 10 characters">
+              <p class="error-msg" id="passwordError">Password must be at least 10 characters and include uppercase, lowercase, a number, and a special character.</p>
+            </div>
+
+            <!-- Confirm Password -->
+            <div>
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+              <p class="error-msg" id="confirmPasswordError">Passwords do not match.</p>
+            </div>
+
+            <!-- Gender -->
+            <div>
+              <label>Gender</label>
+              <div class="radio-group">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="nonbinary"> Non-binary</label>
+                <label><input type="radio" name="gender" value="prefer_not"> Prefer not to say</label>
+              </div>
+              <p class="error-msg" id="genderError">Please select a gender option.</p>
+            </div>
+
+            <!-- Perfernence  -->
+            <div>
+              <label for="dietaryPref">Dietary Preferences</label>
+              <select id="dietaryPref" name="dietaryPref">
+                <option value="">-- Select --</option>
+                <option value="none">No Preference</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="halal">Halal</option>
+                <option value="glutenfree">Gluten-Free</option>
+              </select>
+              <p class="error-msg" id="dietaryError">Please select a dietary preference.</p>
+            </div>
+
+            <!-- Country -->
+            <div>
+              <label for="country">Country / Region</label>
+              <select id="country" name="country">
+                <option value="">-- Select Country --</option>
+                <option value="Australia">Australia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="China">China</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="error-msg" id="countryError">Please select your country or region.</p>
+            </div>
+
+          </div><!-- end form-grid -->
+
+          <!-- Success -->
+          <div class="success-msg" id="registerSuccess">
+            Registration successful! Welcome to TableGlimpse.
+          </div>
+
+          <button type="submit" class="button mt-1">Register</button>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <p>TableGlimpse &copy; 2026. Discover and reserve restaurants in a few clicks. 
+      <br>NOTE: All restaurants featured are not real.All images were found on Google Images</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="recommend.html">Recommendations</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="register.html">Register</a>
+      <a href="bill.html">Bill Calculator</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
