@@ -8,16 +8,24 @@ WEBSITE STRUCTURE
 
 assignment2/
 index.html: Home page - introduces the platform, target users, services, and features
+
 restaurants.html: Restaurant listing - 6 restaurants with full details, filterable by cuisine/price
+
 recommend.html: Recommendation page - rule-based logic suggests a restaurant from user preferences
+
 register.html: Registration form with full JavaScript validation
+
 reservation.html: Reservation form with deposit logic, conditional payment fields, and JS validation
+
 bill.html: Estimated bill calculator - dynamically calculates group dining costs
+
 
 css/style.css: External stylesheet applied to all pages; includes responsive design
 
 js/script.js: All JavaScript logic - validation, filters, recommendations, bill calculator
- images/: Folder for all restaurant and site images
+
+ images/: Folder for all restaurant and site images 
+ 
 Readme.txt: This file
 
 GITHUB && MERCURY
