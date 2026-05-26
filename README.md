@@ -28,10 +28,10 @@ assignment2/
     - This file
 
 GITHUB && MERCURY
-Link to Github Repostiity: https://github.com/TechICO-i/wd_assign2
-Github Pages: https://techico-i.github.io/wd_assign2/
+- Link to Github Repostiity: https://github.com/TechICO-i/wd_assign2
+- Github Pages: https://techico-i.github.io/wd_assign2/
 
-Link to Mercury: https://mercury.swin.edu.au/cos10005/s106175603/wd_assign2/index.html
+- Link to Mercury: https://mercury.swin.edu.au/cos10005/s106175603/wd_assign2/index.html
 
 
 JAVASCRIPT VALIDATION LOGIC
