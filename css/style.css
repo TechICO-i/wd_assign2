@@ -24,7 +24,7 @@ body {
     background: #f8f5f1;
     line-height: 1.6;
     
-    animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.4s ease; /*Apply fade-in animation on page load*/
 }
 
 /* header and nav*/
@@ -39,17 +39,17 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* logo on left, links on right */
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.5rem; /* small gap for when nav wraps on mobile */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 nav h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* slightly smaller than default for a more modern look */
     color: #7e00af;
     letter-spacing: 1px;
 }
@@ -57,7 +57,7 @@ nav h1 {
 nav div {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem;
+    gap: 0.2rem; /* small gap between nav links */
 }
 
 nav a {
@@ -68,11 +68,11 @@ nav a {
     font-size: 0.95rem;
 
     /* background and color transition */
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease; 
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15); 
 }
 
 /* make active link stand out */
@@ -82,9 +82,9 @@ nav a.active {
     font-weight: bold;
 }
 
-/* --- hero --- */
+/*  hero */
 .hero {
-    background: linear-gradient(135deg, #2b2d42 0%, #c126ff 100%);
+    background: linear-gradient(135deg, #2b2d42 0%, #c126ff 100%); /* vibrant purple gradient */
     color: #ffffff;
     padding: 4rem 2rem;
     text-align: center;
@@ -142,7 +142,7 @@ section {
 /* cards grid */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive grid with min card width of 280px */
     gap: 1.5rem;
 }
 
@@ -150,15 +150,15 @@ section {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
-    overflow: hidden;
+    overflow: hidden; /* ensures border-radius applies to images and content inside the card */
 
     /* card lift effect */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    transform: translateY(-3px); /* subtle lift on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14); /* stronger shadow on hover */
 }
 
 .card-body {
@@ -181,15 +181,15 @@ section {
 .card img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    display: block;
+    object-fit: cover; /* ensures the image covers the area without distortion */
+    display: block; /* removes small gap below images */
 }
 
 /* Restaurant card tags */
 .card-tags {
     display: flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* allows tags to wrap on smaller screens */
     margin: 0.6rem 0;
 }
 
@@ -260,8 +260,8 @@ section {
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.2s ease, transform 0.15s ease;
-    display: inline-block;
+    transition: background 0.2s ease, transform 0.15s ease; /* Smooth colour and lift transition on hover */
+    display: inline-block; /* ensures padding and background apply correctly */
     text-decoration: none;
 }
 
@@ -279,7 +279,7 @@ section {
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease; 
 }
 
 .button-outline:hover {
@@ -309,7 +309,7 @@ label {
     font-size: 0.95rem;
 }
 
-input[type="text"],
+input[type="text"], /* text, email, password, number, tel, date, time */
 input[type="email"],
 input[type="password"],
 input[type="number"],
@@ -339,7 +339,7 @@ textarea:focus {
 }
 
 textarea {
-    resize: vertical;
+    resize: vertical; /* allow users to resize the textarea vertically if they need more space */
     min-height: 80px;
 }
 
@@ -350,7 +350,7 @@ textarea {
     gap: 0.6rem;
 }
 
-.inline-check input[type="checkbox"] {
+.inline-check input[type="checkbox"] { /* larger, more clickable checkboxes */
     width: 18px;
     height: 18px;
     cursor: pointer;
@@ -422,12 +422,12 @@ textarea {
 }
 
 /* Slide-down animation for when recommendation or reservation result appears. */
-@keyframes slideDown {
-    from {
+@keyframes slideDown { /* simple fade + slide down effect *\/ */
+    from { /* start state is slightly above and invisible *\/ */
         opacity: 0;
         transform: translateY(-8px);
     }
-    to {
+    to { /* end state is fully visible and in original position *\/ */
         opacity: 1;
         transform: translateY(0);
     }
@@ -464,7 +464,7 @@ textarea {
 /*  About/Feature icons (index.html)*/
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsive grid with min feature item width of 220px *\/ */
     gap: 1.2rem;
     margin-top: 1.5rem;
 }
@@ -551,14 +551,14 @@ footer nav a {
 
 /* Utility */
 .hidden {
-    display: none !important;
+    display: none !important; /* utility class to hide elements, with !important to override any other display styles *\/ */
 }
 
 .text-center {
     text-align: center;
 }
 
-.mt-1 { margin-top: 1rem; }
+.mt-1 { margin-top: 1rem; } 
 .mt-2 { margin-top: 2rem; }
 
 /* 
@@ -568,7 +568,7 @@ RESPONSIVE DESIGN
    Mobile:   <= 767px*/
 
 /*  Tablet (768px - 1023px)  */
-@media (max-width: 1023px) {
+@media (max-width: 1023px) { /* slightly smaller font sizes and more compact layout for tablets *\/ */
     nav h1 {
         font-size: 1.3rem;
     }
